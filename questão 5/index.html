@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inverter as String</title>
+</head>
+<body>
+  <h1>teste de inverter String</h1>
+  <p id="resultado"></p>
+
+  <script>
+    var texto = prompt("Digite uma string para inverter:");
+    function inverterString(str) {
+      var invertida = "";
+      
+      for (var i = str.length - 1; i >= 0; i--) {
+        invertida += str[i]; // Concatenar os caracteres na ordem inversa
+      }
+      return invertida;
+    }
+
+    var resultado = document.getElementById("resultado");
+    resultado.textContent = "String invertida: " + inverterString(texto);
+  </script>
+</body>
+</html>

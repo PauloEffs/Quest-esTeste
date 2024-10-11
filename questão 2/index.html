@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Fibonacci</title>
+</head>
+<body>
+
+    <script>
+        function verificaFibonacci(numero) {
+    let a = 0, b = 1;
+    while (b < numero) {
+        [a, b] = [b, a + b];
+    }
+    return b === numero;
+}
+function verificarNumero(numero) {
+    const pertence = verificaFibonacci(numero);
+    document.write(`${numero} ${pertence ? 'pertence' : 'não pertence'} à sequência de Fibonacci.`);
+}
+
+let entrada = prompt("Insira um número para verificar se ele pertence à sequência de fibonacci:");
+let numero = parseInt(entrada);
+
+if (isNaN(numero)) {
+    document.write("Por favor, digite um número válido.");
+} else {
+    verificarNumero(numero);
+}
+    </script>
+
+
+</body>
+</html>

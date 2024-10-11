@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo Percentual Faturamento</title>
+</head>
+<body>
+  <h1>Porcentagem de Faturamento por Estado</h1>
+  <ul id="resultado"></ul>
+
+  <script>
+
+    var faturamentoSP = 67836.43;
+    var faturamentoRJ = 36678.66;
+    var faturamentoMG = 29229.88;
+    var faturamentoES = 27165.48;
+    var faturamentoOutros = 19849.53;
+
+    var faturamentoTotal = faturamentoSP + faturamentoRJ + faturamentoMG + faturamentoES + faturamentoOutros;
+
+    function calcularPercentual(valor, total) {
+      return ((valor / total) * 100).toFixed(2);
+    }
+
+    var resultado = document.getElementById("resultado");
+
+    var estados = [
+      { nome: "SP", valor: faturamentoSP },
+      { nome: "RJ", valor: faturamentoRJ },
+      { nome: "MG", valor: faturamentoMG },
+      { nome: "ES", valor: faturamentoES },
+      { nome: "Outros", valor: faturamentoOutros }
+    ];
+
+    estados.forEach(function(estado) {
+      var percentual = calcularPercentual(estado.valor, faturamentoTotal);
+      var li = document.createElement("li");
+      li.textContent = estado.nome + ": " + percentual + "%";
+      resultado.appendChild(li);
+    });
+  </script>
+</body>
+</html>
